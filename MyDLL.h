@@ -19,10 +19,8 @@
 
 
 /**
- * @brief brief description of elem typedef struct.
- * 
- *
- * Then it may follow a detailed explanation of the elem structure.
+ * \struct MyDLL 
+ * \brief Struct for elements
  */
 typedef struct MyDLL {
     uint16_t key; /**< The key associated with the element */
@@ -32,7 +30,7 @@ typedef struct MyDLL {
 } MyDLL;
 
 /**
- * \struct DLL_List
+ * \struct MyDLL_List
  * \brief A structure representing a DLL.
  */
 typedef struct MyDLL_List {
@@ -50,9 +48,9 @@ void MyDLLInit();
 
 /**
  * \brief Adds an element to the DLL
- * \param el element to be added
+ * \param elem element to be added
  */
-int MyDLLInsert();
+int MyDLLInsert(MyDLL elem);
 
 /**
  * \brief Removes an element of the DLL
@@ -61,17 +59,17 @@ int MyDLLInsert();
 int MyDLLRemove(uint16_t key);
 
 /**
- * \brief retutns the data of an element identified by its key, or error if it does not exist
+ * \brief returns the data of an element identified by its key, or error if it does not exist
  * \param key key of the element
  */
-int MyDLLFind();
+MyDLL* MyDLLFind(uint16_t key);
 
 /**
- * \brief \brief retutns the data of the next element of the list, or error if it does not exist
+ * \brief retutns the data of the next element of the list, or error if it does not exist
  */
-int MyDLLFindNext();
+MyDLL*MyDLLFindNext();
 
 /**
  * \brief returns the data of the previous element of the list, or error if it does not exist
  */
-int MyDLLFindPrevious();
+MyDLL* MyDLLFindPrevious();
