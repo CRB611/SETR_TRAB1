@@ -14,13 +14,19 @@
  * @{
  */
 
-//struct here//
+#include <stdint.h>
+
+typedef struct MyDLL{
+    uint16_t key;
+    
+
+}MyDLL;
 
 void MyDLLInit();
 
-void MyDLLInsert();
+int MyDLLInsert();
 
-void MyDLLRemove();
+int MyDLLRemove();
 
 int MyDLLFind();
 
