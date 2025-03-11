@@ -13,3 +13,17 @@
  * \brief Functions and structures for working with a doubly linked list-based database.
  * @{
  */
+
+//struct here//
+
+void MyDLLInit();
+
+void MyDLLInsert();
+
+void MyDLLRemove();
+
+int MyDLLFind();
+
+int MyDLLFindNext();
+
+int MyDLLFindPevious();
