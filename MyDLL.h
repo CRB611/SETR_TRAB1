@@ -13,7 +13,8 @@
  * \brief Functions and structures for working with a doubly linked list-based database.
  * @{
  */
-
+#define MAX_ELEM_SIZE 50
+#define MAX_LIST_SIZE 4
 #include <stdint.h>
 
 
@@ -23,11 +24,23 @@
  *
  * Then it may follow a detailed explanation of the elem structure.
  */
-typedef struct MyDLL{
-    uint16_t key;
+typedef struct MyDLL {
+    uint16_t key; /**< The key associated with the element */
+    uint8_t data[MAX_ELEM_SIZE]; /**< The data stored in the element */
+    struct MyDLL* Next; /**< Pointer to the next element */
+    struct MyDLL* Previous; /**< Pointer to the previous element */
+} MyDLL;
 
-
-}MyDLL;
+/**
+ * \struct DLL_List
+ * \brief A structure representing a DLL.
+ */
+typedef struct MyDLL_List {
+    MyDLL Elements[MAX_LIST_SIZE]; /**< Array of Elements in the list */
+    MyDLL* Head; /**< Pointer to the head of the list */
+    MyDLL* Tail; /**< Pointer to the tail/END of the list */
+    int size; /**< Size of the list real time */
+} DLL_List;
 
 /**
  * \brief Initializes a DLL 
