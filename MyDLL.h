@@ -16,20 +16,49 @@
 
 #include <stdint.h>
 
+
+/**
+ * @brief brief description of elem typedef struct.
+ * 
+ *
+ * Then it may follow a detailed explanation of the elem structure.
+ */
 typedef struct MyDLL{
     uint16_t key;
-    
+
 
 }MyDLL;
 
+/**
+ * \brief Initializes a DLL 
+ * \param dll Pointer to the DLL
+ */
 void MyDLLInit();
 
+/**
+ * \brief Adds an element to the DLL
+ * \param el element to be added
+ */
 int MyDLLInsert();
 
-int MyDLLRemove();
+/**
+ * \brief Removes an element of the DLL
+ * \param key key of the element to be removed
+ */
+int MyDLLRemove(uint16_t key);
 
+/**
+ * \brief retutns the data of an element identified by its key, or error if it does not exist
+ * \param key key of the element
+ */
 int MyDLLFind();
 
+/**
+ * \brief \brief retutns the data of the next element of the list, or error if it does not exist
+ */
 int MyDLLFindNext();
 
-int MyDLLFindPevious();
+/**
+ * \brief returns the data of the previous element of the list, or error if it does not exist
+ */
+int MyDLLFindPrevious();
