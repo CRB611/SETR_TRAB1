@@ -58,8 +58,9 @@ int MyDLLInsert(Element elem,MyDLL *dll);
 /**
  * \brief Removes an element of the DLL
  * \param key key of the element to be removed
+ * \return 1 if success, 0 in case of error
  */
-int MyDLLRemove(uint16_t key);
+int MyDLLRemove(uint16_t key, MyDLL *dll);
 
 /**
  * \brief returns the data of an element identified by its key, or error if it does not exist

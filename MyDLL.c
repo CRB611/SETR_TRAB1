@@ -7,7 +7,7 @@ void MyDLLInit(){
     
 }
 
-int MyDLLInsert(MyDLL *elem, MyDLL_List *dll){
+int MyDLLInsert(Element *elem, MyDLL *dll){
     //insert in beginning
     if (elem->key == 1){
         elem->Next= dll->Head;
@@ -23,7 +23,7 @@ int MyDLLInsert(MyDLL *elem, MyDLL_List *dll){
 
     //insert in the middle of the list
 
-    MyDLL *curr = dll->Head;
+    Element *curr = dll->Head;
 
     //go through the list
     for (int i; i < elem->key - 1 && curr != NULL; i++){
@@ -52,8 +52,43 @@ int MyDLLInsert(MyDLL *elem, MyDLL_List *dll){
 }
 
 
-int MyDLLRemove(uint16_t key){
+int MyDLLRemove(uint16_t key, MyDLL *dll){
 
+    if( dll->Head == NULL){
+        printf("The list is already empty");
+        return 0;
+    }
+
+    //temporary element
+    Element *curr= dll->Head;
+
+    //go through the list
+    for (int i; 1 > key && curr != NULL; i++){
+        curr=curr->Next;
+    }
+    
+    //key out of bounds
+    if (curr=NULL){
+        printf("The given key is out of bounds");
+        return 0;
+    }
+
+    //update prev element next pointer
+    if (curr->Previous !=NULL){
+        curr->Previous->Next = curr->Next;
+    }
+
+     //update next element prev pointer
+    if (curr->Next !=NULL){
+        curr->Next->Previous = curr->Previous;
+    }
+
+    //if the element is the head
+    if (dll->Head =curr){
+        dll->Head=curr->Next;
+    }
+    
+    return 1;
 }
 
 
