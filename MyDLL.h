@@ -1,8 +1,9 @@
 /**
  * \file MyDLL.h
- * \brief This file contains all the structures and functions needed for the database creation.
+ * \brief This file contains all the structures and functions needed for the Doubly linked list creation.
  *
- * This file provides the necessary structures and functions to work with a doubly linked list-based database.
+ * This module is responsible for the creation and managemente of a Doubly linked list (DLL), it has functions to create the list, to add,
+ * remove and locate elements of the list, as well as functions to move through the list.
  * 
  * \author Simão Ribeiro
  * \author Celina Brito
@@ -53,7 +54,7 @@ void MyDLLInit();
  * \param dll list where the element will be added
  * \return 1 if success, 0 in case of error
  */
-int MyDLLInsert(Element elem,MyDLL *dll);
+int MyDLLInsert(Element *elem, MyDLL *dll);
 
 /**
  * \brief Removes an element of the DLL
@@ -67,7 +68,7 @@ int MyDLLRemove(uint16_t key, MyDLL *dll);
  * \brief returns the data of an element identified by its key, or error if it does not exist
  * \param key Key of the element
  * \param dll list to seach
- * \return Data of the element, if error NULL ??
+ * \return Data of the element, if error NULL
  */
 Element* MyDLLFind(uint16_t key, MyDLL *dll);
 

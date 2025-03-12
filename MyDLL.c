@@ -18,7 +18,7 @@ int MyDLLInsert(Element *elem, MyDLL *dll){
         }
 
         dll->Head=elem;
-        return 0;
+        return 1 ;
     }
 
     //insert in the middle of the list
@@ -32,8 +32,7 @@ int MyDLLInsert(Element *elem, MyDLL *dll){
 
     //if position out of bounds -> error
     if(curr == NULL){
-        printf("Position out of bounds.\n");
-        //talvez por um free aqui?
+        perror("Position out of bounds.\n");
         return 0;
     }
 
@@ -55,7 +54,7 @@ int MyDLLInsert(Element *elem, MyDLL *dll){
 int MyDLLRemove(uint16_t key, MyDLL *dll){
 
     if( dll->Head == NULL){
-        printf("The list is already empty");
+        perror("The list is already empty");
         return 0;
     }
 
@@ -68,8 +67,8 @@ int MyDLLRemove(uint16_t key, MyDLL *dll){
     }
     
     //key out of bounds
-    if (curr=NULL){
-        printf("The given key is out of bounds");
+    if (curr == NULL){
+        perror("The given key is out of bounds");
         return 0;
     }
 
@@ -84,7 +83,7 @@ int MyDLLRemove(uint16_t key, MyDLL *dll){
     }
 
     //if the element is the head
-    if (dll->Head =curr){
+    if (dll->Head == curr){
         dll->Head=curr->Next;
     }
     
@@ -103,7 +102,7 @@ Element* MyDLLFind(uint16_t key, MyDLL *dll){
     }
     
     //if not present
-    if(curr == NULL || curr->data != key)
+    if(curr == NULL || curr->key != key)
         return NULL;
 
     return curr;    

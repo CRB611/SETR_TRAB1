@@ -1,0 +1,64 @@
+\doxysection{My\+DLL.\+h File Reference}
+\hypertarget{MyDLL_8h}{}\label{MyDLL_8h}\index{MyDLL.h@{MyDLL.h}}
+
+
+This file contains all the structures and functions needed for the Doubly linked list creation.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for My\+DLL.\+h\+:
+% FIG 0
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structElement}{Element}}
+\begin{DoxyCompactList}\small\item\em Struct for elements. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structMyDLL}{My\+DLL}}
+\begin{DoxyCompactList}\small\item\em A structure representing a DLL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries MAX\+\_\+\+ELEM\+\_\+\+SIZE}~50
+\item 
+\#define {\bfseries MAX\+\_\+\+LIST\+\_\+\+SIZE}~4
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structElement}{Element}} {\bfseries Element}
+\item 
+typedef struct \mbox{\hyperlink{structMyDLL}{My\+DLL}} {\bfseries My\+DLL}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__MyDLL_ga754e09f58943e9692c209a16fd961db7}{My\+DLLInit}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a DLL. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__MyDLL_ga09045179f6ae4bee134d162a6073ab99}{My\+DLLInsert}} (\mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*}elem, \mbox{\hyperlink{structMyDLL}{My\+DLL}} \texorpdfstring{$\ast$}{*}dll)
+\begin{DoxyCompactList}\small\item\em Adds an element to the DLL. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__MyDLL_ga57ddbec1678f72044105ffdc820b3a72}{My\+DLLRemove}} (uint16\+\_\+t key, \mbox{\hyperlink{structMyDLL}{My\+DLL}} \texorpdfstring{$\ast$}{*}dll)
+\begin{DoxyCompactList}\small\item\em Removes an element of the DLL. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__MyDLL_ga18bc081a09eb5b80834262879f49f45e}{My\+DLLFind}} (uint16\+\_\+t key, \mbox{\hyperlink{structMyDLL}{My\+DLL}} \texorpdfstring{$\ast$}{*}dll)
+\begin{DoxyCompactList}\small\item\em returns the data of an element identified by its key, or error if it does not exist \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*} {\bfseries My\+DLLFind\+Next} ()
+\begin{DoxyCompactList}\small\item\em retutns the data of the next element of the list, or error if it does not exist \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*} {\bfseries My\+DLLFind\+Previous} ()
+\begin{DoxyCompactList}\small\item\em returns the data of the previous element of the list, or error if it does not exist \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the structures and functions needed for the Doubly linked list creation. 
+
+This module is responsible for the creation and managemente of a Doubly linked list (DLL), it has functions to create the list, to add, remove and locate elements of the list, as well as functions to move through the list.
+
+\begin{DoxyAuthor}{Author}
+Simão Ribeiro 
+
+Celina Brito 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/3/2024 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]There are no known bugs.\end{DoxyRefDesc}

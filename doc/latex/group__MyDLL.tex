@@ -1,0 +1,203 @@
+\doxysection{My\+DLL}
+\hypertarget{group__MyDLL}{}\label{group__MyDLL}\index{MyDLL@{MyDLL}}
+
+
+Functions and structures for working with a doubly linked list-\/based database.  
+
+
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structElement}{Element}}
+\begin{DoxyCompactList}\small\item\em Struct for elements. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structMyDLL}{My\+DLL}}
+\begin{DoxyCompactList}\small\item\em A structure representing a DLL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__MyDLL_gaa84da8be2a5293eca8340e41e267af15}\label{group__MyDLL_gaa84da8be2a5293eca8340e41e267af15} 
+\#define {\bfseries MAX\+\_\+\+ELEM\+\_\+\+SIZE}~50
+\item 
+\Hypertarget{group__MyDLL_ga52a03eea6b90f6bc967ed15a7e6a36b9}\label{group__MyDLL_ga52a03eea6b90f6bc967ed15a7e6a36b9} 
+\#define {\bfseries MAX\+\_\+\+LIST\+\_\+\+SIZE}~4
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__MyDLL_ga4d9e4171e0ee83fe777219f894992340}\label{group__MyDLL_ga4d9e4171e0ee83fe777219f894992340} 
+typedef struct \mbox{\hyperlink{structElement}{Element}} {\bfseries Element}
+\item 
+\Hypertarget{group__MyDLL_ga3d18d69be50de39503f2602240a26a86}\label{group__MyDLL_ga3d18d69be50de39503f2602240a26a86} 
+typedef struct \mbox{\hyperlink{structMyDLL}{My\+DLL}} {\bfseries My\+DLL}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__MyDLL_ga754e09f58943e9692c209a16fd961db7}{My\+DLLInit}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a DLL. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__MyDLL_ga09045179f6ae4bee134d162a6073ab99}{My\+DLLInsert}} (\mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*}elem, \mbox{\hyperlink{structMyDLL}{My\+DLL}} \texorpdfstring{$\ast$}{*}dll)
+\begin{DoxyCompactList}\small\item\em Adds an element to the DLL. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__MyDLL_ga57ddbec1678f72044105ffdc820b3a72}{My\+DLLRemove}} (uint16\+\_\+t key, \mbox{\hyperlink{structMyDLL}{My\+DLL}} \texorpdfstring{$\ast$}{*}dll)
+\begin{DoxyCompactList}\small\item\em Removes an element of the DLL. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__MyDLL_ga18bc081a09eb5b80834262879f49f45e}{My\+DLLFind}} (uint16\+\_\+t key, \mbox{\hyperlink{structMyDLL}{My\+DLL}} \texorpdfstring{$\ast$}{*}dll)
+\begin{DoxyCompactList}\small\item\em returns the data of an element identified by its key, or error if it does not exist \end{DoxyCompactList}\item 
+\Hypertarget{group__MyDLL_ga43d36692bab154549a3f71017acb34bd}\label{group__MyDLL_ga43d36692bab154549a3f71017acb34bd} 
+\mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*} {\bfseries My\+DLLFind\+Next} ()
+\begin{DoxyCompactList}\small\item\em retutns the data of the next element of the list, or error if it does not exist \end{DoxyCompactList}\item 
+\Hypertarget{group__MyDLL_gaaf0493f4faea47968fd9b68ce5de103e}\label{group__MyDLL_gaaf0493f4faea47968fd9b68ce5de103e} 
+\mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*} {\bfseries My\+DLLFind\+Previous} ()
+\begin{DoxyCompactList}\small\item\em returns the data of the previous element of the list, or error if it does not exist \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__MyDLL_gad47e337d7e6f1cf1c0be38b3b5e76a5c}{Element\+::key}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__MyDLL_ga3207abb50ebd895ebcd7109083f58d98}{Element\+::data}} \mbox{[}MAX\+\_\+\+ELEM\+\_\+\+SIZE\mbox{]}
+\item 
+struct \mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__MyDLL_ga088de7bf53a6459b0318d83903672eca}{Element\+::\+Next}}
+\item 
+struct \mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__MyDLL_ga49d4e97398623f3d7bc672638b5168d1}{Element\+::\+Previous}}
+\item 
+\mbox{\hyperlink{structElement}{Element}} \mbox{\hyperlink{group__MyDLL_ga39fc4a4ddba2109ce58b5e250f8e5436}{My\+DLL\+::\+Elements}} \mbox{[}MAX\+\_\+\+LIST\+\_\+\+SIZE\mbox{]}
+\item 
+\mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__MyDLL_ga2605214e3c445faa1f635148fa1d9016}{My\+DLL\+::\+Head}}
+\item 
+\mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__MyDLL_ga3310d963a8398576c86e22af48e259ee}{My\+DLL\+::\+Tail}}
+\item 
+int \mbox{\hyperlink{group__MyDLL_ga8974b239d43b38efcab9d8f1f385a054}{My\+DLL\+::size}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions and structures for working with a doubly linked list-\/based database. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__MyDLL_ga18bc081a09eb5b80834262879f49f45e}\label{group__MyDLL_ga18bc081a09eb5b80834262879f49f45e} 
+\index{MyDLL@{MyDLL}!MyDLLFind@{MyDLLFind}}
+\index{MyDLLFind@{MyDLLFind}!MyDLL@{MyDLL}}
+\doxysubsubsection{\texorpdfstring{MyDLLFind()}{MyDLLFind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*} My\+DLLFind (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{key,  }\item[{\mbox{\hyperlink{structMyDLL}{My\+DLL}} \texorpdfstring{$\ast$}{*}}]{dll }\end{DoxyParamCaption})}
+
+
+
+returns the data of an element identified by its key, or error if it does not exist 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of the element \\
+\hline
+{\em dll} & list to seach \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Data of the element, if error NULL ?? 
+\end{DoxyReturn}
+\Hypertarget{group__MyDLL_ga754e09f58943e9692c209a16fd961db7}\label{group__MyDLL_ga754e09f58943e9692c209a16fd961db7} 
+\index{MyDLL@{MyDLL}!MyDLLInit@{MyDLLInit}}
+\index{MyDLLInit@{MyDLLInit}!MyDLL@{MyDLL}}
+\doxysubsubsection{\texorpdfstring{MyDLLInit()}{MyDLLInit()}}
+{\footnotesize\ttfamily void My\+DLLInit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes a DLL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dll} & Pointer to the DLL \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__MyDLL_ga09045179f6ae4bee134d162a6073ab99}\label{group__MyDLL_ga09045179f6ae4bee134d162a6073ab99} 
+\index{MyDLL@{MyDLL}!MyDLLInsert@{MyDLLInsert}}
+\index{MyDLLInsert@{MyDLLInsert}!MyDLL@{MyDLL}}
+\doxysubsubsection{\texorpdfstring{MyDLLInsert()}{MyDLLInsert()}}
+{\footnotesize\ttfamily int My\+DLLInsert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structElement}{Element}} \texorpdfstring{$\ast$}{*}}]{elem,  }\item[{\mbox{\hyperlink{structMyDLL}{My\+DLL}} \texorpdfstring{$\ast$}{*}}]{dll }\end{DoxyParamCaption})}
+
+
+
+Adds an element to the DLL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & element to be added \\
+\hline
+{\em dll} & list where the element will be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if success, 0 in case of error 
+\end{DoxyReturn}
+\Hypertarget{group__MyDLL_ga57ddbec1678f72044105ffdc820b3a72}\label{group__MyDLL_ga57ddbec1678f72044105ffdc820b3a72} 
+\index{MyDLL@{MyDLL}!MyDLLRemove@{MyDLLRemove}}
+\index{MyDLLRemove@{MyDLLRemove}!MyDLL@{MyDLL}}
+\doxysubsubsection{\texorpdfstring{MyDLLRemove()}{MyDLLRemove()}}
+{\footnotesize\ttfamily int My\+DLLRemove (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{key,  }\item[{\mbox{\hyperlink{structMyDLL}{My\+DLL}} \texorpdfstring{$\ast$}{*}}]{dll }\end{DoxyParamCaption})}
+
+
+
+Removes an element of the DLL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & key of the element to be removed \\
+\hline
+{\em dll} & list where the element will be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if success, 0 in case of error 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{group__MyDLL_ga3207abb50ebd895ebcd7109083f58d98}\label{group__MyDLL_ga3207abb50ebd895ebcd7109083f58d98} 
+\index{MyDLL@{MyDLL}!data@{data}}
+\index{data@{data}!MyDLL@{MyDLL}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily uint8\+\_\+t Element\+::data\mbox{[}MAX\+\_\+\+ELEM\+\_\+\+SIZE\mbox{]}}
+
+The data stored in the element \Hypertarget{group__MyDLL_ga39fc4a4ddba2109ce58b5e250f8e5436}\label{group__MyDLL_ga39fc4a4ddba2109ce58b5e250f8e5436} 
+\index{MyDLL@{MyDLL}!Elements@{Elements}}
+\index{Elements@{Elements}!MyDLL@{MyDLL}}
+\doxysubsubsection{\texorpdfstring{Elements}{Elements}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structElement}{Element}} My\+DLL\+::\+Elements\mbox{[}MAX\+\_\+\+LIST\+\_\+\+SIZE\mbox{]}}
+
+Array of Elements in the list \Hypertarget{group__MyDLL_ga2605214e3c445faa1f635148fa1d9016}\label{group__MyDLL_ga2605214e3c445faa1f635148fa1d9016} 
+\index{MyDLL@{MyDLL}!Head@{Head}}
+\index{Head@{Head}!MyDLL@{MyDLL}}
+\doxysubsubsection{\texorpdfstring{Head}{Head}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structElement}{Element}}\texorpdfstring{$\ast$}{*} My\+DLL\+::\+Head}
+
+Pointer to the head of the list \Hypertarget{group__MyDLL_gad47e337d7e6f1cf1c0be38b3b5e76a5c}\label{group__MyDLL_gad47e337d7e6f1cf1c0be38b3b5e76a5c} 
+\index{MyDLL@{MyDLL}!key@{key}}
+\index{key@{key}!MyDLL@{MyDLL}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily uint16\+\_\+t Element\+::key}
+
+The key associated with the element \Hypertarget{group__MyDLL_ga088de7bf53a6459b0318d83903672eca}\label{group__MyDLL_ga088de7bf53a6459b0318d83903672eca} 
+\index{MyDLL@{MyDLL}!Next@{Next}}
+\index{Next@{Next}!MyDLL@{MyDLL}}
+\doxysubsubsection{\texorpdfstring{Next}{Next}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structElement}{Element}}\texorpdfstring{$\ast$}{*} Element\+::\+Next}
+
+Pointer to the next element \Hypertarget{group__MyDLL_ga49d4e97398623f3d7bc672638b5168d1}\label{group__MyDLL_ga49d4e97398623f3d7bc672638b5168d1} 
+\index{MyDLL@{MyDLL}!Previous@{Previous}}
+\index{Previous@{Previous}!MyDLL@{MyDLL}}
+\doxysubsubsection{\texorpdfstring{Previous}{Previous}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structElement}{Element}}\texorpdfstring{$\ast$}{*} Element\+::\+Previous}
+
+Pointer to the previous element \Hypertarget{group__MyDLL_ga8974b239d43b38efcab9d8f1f385a054}\label{group__MyDLL_ga8974b239d43b38efcab9d8f1f385a054} 
+\index{MyDLL@{MyDLL}!size@{size}}
+\index{size@{size}!MyDLL@{MyDLL}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int My\+DLL\+::size}
+
+Size of the list real time \Hypertarget{group__MyDLL_ga3310d963a8398576c86e22af48e259ee}\label{group__MyDLL_ga3310d963a8398576c86e22af48e259ee} 
+\index{MyDLL@{MyDLL}!Tail@{Tail}}
+\index{Tail@{Tail}!MyDLL@{MyDLL}}
+\doxysubsubsection{\texorpdfstring{Tail}{Tail}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structElement}{Element}}\texorpdfstring{$\ast$}{*} My\+DLL\+::\+Tail}
+
+Pointer to the tail/\+END of the list 
