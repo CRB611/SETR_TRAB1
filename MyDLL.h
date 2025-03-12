@@ -10,7 +10,7 @@
  * \date 10/3/2024
  * \bug There are no known bugs.
  *
- * \defgroup MyDLL MyDLL
+ * \defgroup Element MyDLL
  * \brief Functions and structures for working with a doubly linked list-based database.
  * @{
  */

@@ -14,7 +14,15 @@ int MyDLLInsert(Element *elem, MyDLL *dll){
 
         //DLL not empty
         if(dll->Head != NULL){
+            
+            //verify if the key is unique
+            if (dll->Head->key == 1){
+                perror("that key is already exists");
+                return 0;
+            }
+
             dll->Head->Previous =elem;
+            
         }
 
         dll->Head=elem;
@@ -34,6 +42,9 @@ int MyDLLInsert(Element *elem, MyDLL *dll){
     if(curr == NULL){
         perror("Position out of bounds.\n");
         return 0;
+    }else if (curr->key == elem->key){  //checking overlapping keys
+        perror("that key is already exists");
+        return 0;
     }
 
     elem->Previous=curr;
@@ -50,7 +61,6 @@ int MyDLLInsert(Element *elem, MyDLL *dll){
     return 1;
 }
 
-
 int MyDLLRemove(uint16_t key, MyDLL *dll){
 
     if( dll->Head == NULL){
@@ -62,13 +72,18 @@ int MyDLLRemove(uint16_t key, MyDLL *dll){
     Element *curr= dll->Head;
 
     //go through the list
-    for (int i; 1 > key && curr != NULL; i++){
+    int i=0;
+    while (i > key && curr != NULL){
         curr=curr->Next;
+        i++;
     }
     
     //key out of bounds
     if (curr == NULL){
         perror("The given key is out of bounds");
+        return 0;
+    }else if( i != key){    //key not on list
+        perror("The given key isn't on the list");
         return 0;
     }
 
@@ -89,7 +104,6 @@ int MyDLLRemove(uint16_t key, MyDLL *dll){
     
     return 1;
 }
-
 
 Element* MyDLLFind(uint16_t key, MyDLL *dll){
     Element *curr = dll->Head;
