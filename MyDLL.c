@@ -92,16 +92,29 @@ int MyDLLRemove(uint16_t key, MyDLL *dll){
 }
 
 
-MyDLL* MyDLLFind(uint16_t key){
+Element* MyDLLFind(uint16_t key, MyDLL *dll){
+    Element *curr = dll->Head;
+    int pos = 0;
+
+    //go through the list
+    while (curr != NULL && curr->key != key){
+        pos++;
+        curr = curr->Next;
+    }
+    
+    //if not present
+    if(curr == NULL || curr->data != key)
+        return NULL;
+
+    return curr;    
+}
+
+
+Element*MyDLLFindNext(){
 
 }
 
 
-MyDLL*MyDLLFindNext(){
-
-}
-
-
-MyDLL* MyDLLFindPrevious(){
+Element* MyDLLFindPrevious(){
 
 }

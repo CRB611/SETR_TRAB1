@@ -58,15 +58,18 @@ int MyDLLInsert(Element elem,MyDLL *dll);
 /**
  * \brief Removes an element of the DLL
  * \param key key of the element to be removed
+ * \param dll list where the element will be removed
  * \return 1 if success, 0 in case of error
  */
 int MyDLLRemove(uint16_t key, MyDLL *dll);
 
 /**
  * \brief returns the data of an element identified by its key, or error if it does not exist
- * \param key key of the element
+ * \param key Key of the element
+ * \param dll list to seach
+ * \return Data of the element, if error NULL ??
  */
-Element* MyDLLFind(uint16_t key);
+Element* MyDLLFind(uint16_t key, MyDLL *dll);
 
 /**
  * \brief retutns the data of the next element of the list, or error if it does not exist
