@@ -16,29 +16,30 @@
 #define MAX_ELEM_SIZE 50
 #define MAX_LIST_SIZE 4
 #include <stdint.h>
+#include <stdio.h>
 
 
 /**
- * \struct MyDLL 
+ * \struct Element 
  * \brief Struct for elements
  */
-typedef struct MyDLL {
+typedef struct Element {
     uint16_t key; /**< The key associated with the element */
     uint8_t data[MAX_ELEM_SIZE]; /**< The data stored in the element */
-    struct MyDLL* Next; /**< Pointer to the next element */
-    struct MyDLL* Previous; /**< Pointer to the previous element */
-} MyDLL;
+    struct Element* Next; /**< Pointer to the next element */
+    struct Element* Previous; /**< Pointer to the previous element */
+} Element;
 
 /**
- * \struct MyDLL_List
+ * \struct MyDLL
  * \brief A structure representing a DLL.
  */
-typedef struct MyDLL_List {
-    MyDLL Elements[MAX_LIST_SIZE]; /**< Array of Elements in the list */
-    MyDLL* Head; /**< Pointer to the head of the list */
-    MyDLL* Tail; /**< Pointer to the tail/END of the list */
+typedef struct MyDLL {
+    Element Elements[MAX_LIST_SIZE]; /**< Array of Elements in the list */
+    Element* Head; /**< Pointer to the head of the list */
+    Element* Tail; /**< Pointer to the tail/END of the list */
     int size; /**< Size of the list real time */
-} DLL_List;
+} MyDLL;
 
 /**
  * \brief Initializes a DLL 
@@ -49,8 +50,10 @@ void MyDLLInit();
 /**
  * \brief Adds an element to the DLL
  * \param elem element to be added
+ * \param dll list where the element will be added
+ * \return 1 if success, 0 in case of error
  */
-int MyDLLInsert(MyDLL elem);
+int MyDLLInsert(Element elem,MyDLL *dll);
 
 /**
  * \brief Removes an element of the DLL
@@ -62,14 +65,14 @@ int MyDLLRemove(uint16_t key);
  * \brief returns the data of an element identified by its key, or error if it does not exist
  * \param key key of the element
  */
-MyDLL* MyDLLFind(uint16_t key);
+Element* MyDLLFind(uint16_t key);
 
 /**
  * \brief retutns the data of the next element of the list, or error if it does not exist
  */
-MyDLL*MyDLLFindNext();
+Element* MyDLLFindNext();
 
 /**
  * \brief returns the data of the previous element of the list, or error if it does not exist
  */
-MyDLL* MyDLLFindPrevious();
+Element* MyDLLFindPrevious();
