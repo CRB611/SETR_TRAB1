@@ -141,6 +141,14 @@ Element* curr = MyDLLFind(dll,key);
 }
 
 
-Element* MyDLLFindPrevious(){
+Element* MyDLLFindPrevious(MyDLL* dll, uint16_t key){
+Element* curr = MyDLLFind(dll,key);
+    if (curr == NULL || curr->Previous == NULL)
+    {
+        printf("Error: Elemnt with key %d not valide or is the first element in the list\n");
+        return NULL; 
+    }
+
+    return curr->Previous;    
 
 }
