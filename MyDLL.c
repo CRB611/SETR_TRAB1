@@ -146,7 +146,7 @@ Element* curr = MyDLLFind(dll,key);
     if (curr == NULL || curr->Previous == NULL)
     {
         printf("Error: Elemnt with key %d not valide or is the first element in the list\n");
-        return NULL; 
+        return NULL ; 
     }
 
     return curr->Previous;    
