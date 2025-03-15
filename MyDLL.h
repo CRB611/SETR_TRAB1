@@ -46,7 +46,7 @@ typedef struct MyDLL {
  * \brief Initializes a DLL 
  * \param dll Pointer to the DLL
  */
-void MyDLLInit();
+void MyDLLInit(MyDLL* dll);
 
 /**
  * \brief Adds an element to the DLL
@@ -74,10 +74,16 @@ Element* MyDLLFind(uint16_t key, MyDLL *dll);
 
 /**
  * \brief retutns the data of the next element of the list, or error if it does not exist
+ * \param dll POinter to the DLL
+ * \param key key of the current element
+ * \return pointer to the next element, if found
  */
-Element* MyDLLFindNext();
+Element* MyDLLFindNext(MyDLL* dll,uint16_t key);
 
 /**
  * \brief returns the data of the previous element of the list, or error if it does not exist
+ * \param dll POinter to the DLL
+ * \param key key of the current element
+ * \return pointer to the previous element, if found
  */
-Element* MyDLLFindPrevious();
+Element* MyDLLFindPrevious(MyDLL* dll, uint16_t key);
