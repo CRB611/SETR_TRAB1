@@ -1,11 +1,16 @@
 #include "MyDLL.h"
 
 
-void MyDLLInit(){
-
-
-    
+void MyDLLInit(MyDLL* dll){
+    dll->size=0;
+    dll->Tail=NULL;
+    dll->Head=NULL;
+    for (int i = 0; i < MAX_LIST_SIZE; i++)
+    {
+        dll->Elements[i].key = 0;
+    }  
 }
+
 
 int MyDLLInsert(Element *elem, MyDLL *dll){
     //insert in beginning
