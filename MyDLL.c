@@ -12,64 +12,51 @@ void MyDLLInit(MyDLL* dll){
 }
 
 
-int MyDLLInsert(Element *elem, MyDLL *dll){
-    //insert in beginning
-    if (elem->key == 1){
-        elem->Next= dll->Head;
-
-        //DLL not empty
-        if(dll->Head != NULL){
-            
-            //verify if the key is unique
-            if (dll->Head->key == 1){
-                perror("that key is already exists");
-                return 0;
-            }
-
-            dll->Head->Previous =elem;
-            
-        }
-
-        dll->Head=elem;
-        return 1 ;
-    }
-
-    //insert in the middle of the list
-
-    Element *curr = dll->Head;
-
-    //go through the list
-    for (int i; i < elem->key - 1 && curr != NULL; i++){
-        curr=curr->Next;
-    }
-
-    //if position out of bounds -> error
-    if(curr == NULL){
-        perror("Position out of bounds.\n");
-        return 0;
-    }else if (curr->key == elem->key){  //checking overlapping keys
-        perror("that key is already exists");
-        return 0;
-    }
-
-    elem->Previous=curr;
-
-    elem->Next= curr->Next;
-
-    curr->Next = elem;
-
-    // if new elem is not the last, update the prev of the next
-    if (elem->Next != NULL){
-        elem->Next->Previous=elem->Next;
-    }
+int MyDLLInsert(uint16_t key, uint8_t* data, MyDLL *dll){
     
+    //check if size doesnt exceed
+    if (dll->size >= MAX_LIST_SIZE)
+    {
+        printf("The max number of elements (%d) was exceeded.\n",MAX_LIST_SIZE);
+        return 0;
+    }
+       
+    Element* elem =NULL;
+
+    for (int i = 0; i < MAX_LIST_SIZE; i++)
+    {
+        if (dll->Elements[i].key==key)
+        {
+            printf("The chosen key(%d) already exists.\n",key);
+            return 0;
+        }else if (dll->Elements[i].key==0){
+            elem =&dll->Elements[i];
+        }
+    }  
+
+    elem->key=key;
+    for (int i = 0; i < MAX_ELEM_SIZE; i++)
+    {
+        elem->data[i]=data[i];
+    }
+
+    if (dll->size == 0){
+        dll->Head = elem;
+        dll->Tail =elem; 
+    }else{
+        dll->Tail->Next = elem;
+        elem->Previous =dll->Tail;
+        elem->Next =NULL;
+        dll->Tail= elem;
+    }
+    dll->size++;
     return 1;
 }
 
-int MyDLLRemove(uint16_t key, MyDLL *dll){
+int MyDLLRemove(uint16_t key, MyDLL* dll){
 
     if( dll->Head == NULL){
-        perror("The list is already empty");
+        printf("The list is already empty\n");
         return 0;
     }
 
@@ -78,17 +65,18 @@ int MyDLLRemove(uint16_t key, MyDLL *dll){
 
     //go through the list
     int i=0;
-    while (i > key && curr != NULL){
+    for (int i = 1; curr !=NULL; i++)
+    {
         curr=curr->Next;
-        i++;
     }
+    
     
     //key out of bounds
     if (curr == NULL){
-        perror("The given key is out of bounds");
+        printf("The given key(%d) is out of bounds\n",key);
         return 0;
     }else if( i != key){    //key not on list
-        perror("The given key isn't on the list");
+        printf("The given key(%d) isn't on the list\n",key);
         return 0;
     }
 
@@ -151,4 +139,22 @@ Element* curr = MyDLLFind(dll,key);
 
     return curr->Previous;    
 
+}
+
+void MyDLLPrint(MyDLL* dll){
+
+    Element* curr = dll->Head;
+
+    if (curr==NULL)
+    {
+        printf("the list is empty\n");
+    }else{
+        printf("DLL start\n");
+        //go through the list
+        while (curr!=NULL){
+            printf("%d\n%s\n---------------\n",curr->key,curr->data);
+            curr=curr->Next;
+        }
+        printf("DLL end\n");
+    }
 }

@@ -50,11 +50,12 @@ void MyDLLInit(MyDLL* dll);
 
 /**
  * \brief Adds an element to the DLL
- * \param elem element to be added
+ * \param key key of the element to be added
+ * \param data data of the element to be added
  * \param dll list where the element will be added
  * \return 1 if success, 0 in case of error
  */
-int MyDLLInsert(Element *elem, MyDLL *dll);
+int MyDLLInsert(uint16_t key,uint8_t* data, MyDLL* dll);
 
 /**
  * \brief Removes an element of the DLL
@@ -62,7 +63,7 @@ int MyDLLInsert(Element *elem, MyDLL *dll);
  * \param dll list where the element will be removed
  * \return 1 if success, 0 in case of error
  */
-int MyDLLRemove(uint16_t key, MyDLL *dll);
+int MyDLLRemove(uint16_t key, MyDLL* dll);
 
 /**
  * \brief returns the data of an element identified by its key, or error if it does not exist
@@ -70,7 +71,7 @@ int MyDLLRemove(uint16_t key, MyDLL *dll);
  * \param dll list to seach
  * \return Data of the element, if error NULL
  */
-Element* MyDLLFind(uint16_t key, MyDLL *dll);
+Element* MyDLLFind(uint16_t key, MyDLL* dll);
 
 /**
  * \brief retutns the data of the next element of the list, or error if it does not exist
@@ -87,3 +88,9 @@ Element* MyDLLFindNext(MyDLL* dll,uint16_t key);
  * \return pointer to the previous element, if found
  */
 Element* MyDLLFindPrevious(MyDLL* dll, uint16_t key);
+
+/**
+ * \brief Prints the current DLL
+ * \param dll POinter to the DLL
+ */
+void MyDLLPrint(MyDLL* dll);
