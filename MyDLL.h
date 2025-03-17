@@ -15,7 +15,8 @@
  * @{
  */
 #define MAX_ELEM_SIZE 50
-#define MAX_LIST_SIZE 4
+#define MAX_LIST_SIZE 20
+
 #include <stdint.h>
 #include <stdio.h>
 
