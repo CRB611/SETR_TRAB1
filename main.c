@@ -7,34 +7,25 @@ int main(){
 
     MyDLLInit(&DLL); 
 
-    MyDLLPrint(&DLL);
-   
-    MyDLLRemove(1,&DLL);
+    printf("\n>>> Removal of elements whilst the list is empty <<<\n");
+    MyDLLRemove(567,&DLL);
 
-    MyDLLInsert(2,&"hello",&DLL);
-
-    MyDLLInsert(1,&"ola",&DLL);
-
-    MyDLLInsert(1,&"lalal",&DLL);
-   
-    MyDLLInsert(4,&"abacate",&DLL);
- 
-    MyDLLInsert(3,&"abcde",&DLL);
-
-    MyDLLInsert(5,&"super",&DLL);
+    printf("\n>>> Insertion of elements <<<\n");
     
+    uint8_t nomes[8][MAX_ELEM_SIZE]={"Ana,987654","Miguel,654321","Beatriz,123987","Rui,741852","Maria,435253","Eduardo,345253","João,159753","Sofia,852963"};
+    MyDLLInsert(201, nomes[0], &DLL);
+    MyDLLInsert(305, nomes[1], &DLL);
+    MyDLLInsert(789, nomes[2], &DLL);
+    MyDLLInsert(201, nomes[4], &DLL);
+    MyDLLInsert(410, nomes[3], &DLL);
+    MyDLLInsert(123, nomes[4], &DLL);
+
     MyDLLPrint(&DLL);
 
-    MyDLLRemove(3,&DLL);
-
-    MyDLLPrint(&DLL);
-
-    printf("\nTesteSimao\n");
-    printf("\n>>> Inserção de elementos <<<\n");
-    MyDLLInsert(201, "Ana,987654", &DLL);
-    MyDLLInsert(305, "Miguel,654321", &DLL);
-    MyDLLInsert(789, "Beatriz,123987", &DLL);
-    MyDLLInsert(410, "Rui,741852", &DLL);
+    printf("\n>>> Removal of elements <<<\n");
+    
+    MyDLLRemove(567,&DLL);
+    MyDLLRemove(789,&DLL);
 
     MyDLLPrint(&DLL);
 
@@ -42,14 +33,13 @@ int main(){
     Element* encontrado = MyDLLFind(305, &DLL);
     if (encontrado) {
         printf("Elemento encontrado -> Chave: %d, Dados: %s\n", encontrado->key, encontrado->data);
-    } else {
-        printf("Elemento com chave 305 não encontrado.\n");
-    }
-
-    printf("\n>>> Teste de remoção <<<\n");
-    MyDLLRemove(305, &DLL);
-    MyDLLPrint(&DLL);
-
+    } 
+    encontrado=MyDLLFind(304,&DLL);
+    if (encontrado) {
+        printf("Elemento encontrado -> Chave: %d, Dados: %s\n", encontrado->key, encontrado->data);
+    } 
+    
+    
     printf("\n>>> Teste de busca do próximo e anterior <<<\n");
     Element* next = MyDLLFindNext(&DLL, 410);
     if (next) {
@@ -66,8 +56,8 @@ int main(){
     }
 
     printf("\n>>> Inserção adicional e estado final da lista <<<\n");
-    MyDLLInsert(512, "João,159753", &DLL);
-    MyDLLInsert(634, "Sofia,852963", &DLL);
+    MyDLLInsert(512, nomes[6], &DLL);
+    MyDLLInsert(634, nomes[7], &DLL);
     MyDLLPrint(&DLL);
 
     return 0;

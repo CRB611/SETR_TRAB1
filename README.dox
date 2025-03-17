@@ -5,7 +5,13 @@
 @author Celina Brito
 @author Simão Ribeiro
 
-This is our first assignment for our "Sistemas Embutidos e de Tempo Real" course, in this assignment we were asked to make a Doubly Linked List.
+@brief This is our first assignment for our "Sistemas Embutidos e de Tempo Real" course, in this assignment we were asked to make a Doubly Linked List.
+
+/details A DLL is a data structure consinting of a list of elements in sequence were each element has a given key and value and is connected to its previous and next
+list elements. 
+<br>
+<b>Features<b>
+-<i>Insertion:<i> blablabla
 
 
 */
