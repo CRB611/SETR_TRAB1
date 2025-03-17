@@ -7,11 +7,30 @@
 
 @brief This is our first assignment for our "Sistemas Embutidos e de Tempo Real" course, in this assignment we were asked to make a Doubly Linked List.
 
-/details A DLL is a data structure consinting of a list of elements in sequence were each element has a given key and value and is connected to its previous and next
+@details A DLL is a data structure consinting of a list of elements in sequence were each element has a given key and value and is connected to its previous and next
 list elements. 
 <br>
-<b>Features<b>
--<i>Insertion:<i> blablabla
+<b>Features</b><br>
+<ul>
+    <li><i>Initialization:</i> initializes a new doubly linked list </li>
+    <li><i>Insertion:</i> Inserting a new element to the DLL. </li>
+    <li><i>Removal:</i> Removing an element of the DLL acording to a given key. </li>
+    <li><i>Searching:</i> Searching for an element of the DLL acording to a given key. </li>
+</ul>
+
+<b>File Structure:</b><br>
+<ul>
+    <li><i>MyDLL.h:</i> Header file with the DLL functions and structures. </li>
+    <li><i>MyDLL.c:</i> SOurce file containing the implementation of the code needed to the DLL</li>
+    <li><i>main.c:</i> Main file where it is shown that the module works and tests are run. </li>
+</ul>
+
+
+<b>Usage:</b><br>
+
+
+<b>Test scenarios covered:</b><br>
+
 
 
 */
