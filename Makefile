@@ -1,17 +1,31 @@
-DEFAULT_TARGET=main
-OBJECTS = main.o MyDLL.o
-
+# Variáveis de configuração
+BUILD_DIR = build
+TARGET = $(BUILD_DIR)/main
+SOURCES = main.c MyDLL.c
+OBJECTS = $(SOURCES:%.c=$(BUILD_DIR)/%.o)
 CFLAGS = -g -Wall -O3
-CC=gcc
+CC = gcc
 
+# Alvo padrão
+all: $(TARGET)
 
-# Generate application
-$(DEFAULT_TARGET): $(OBJECTS)
-	$(CC) $(CFLAGS) -o $(DEFAULT_TARGET) $(OBJECTS)
+# Regra para criar a pasta build, se não existir
+$(BUILD_DIR):
+	mkdir -p $(BUILD_DIR)
+
+# Regra para compilar cada fonte em um objeto na pasta build
+$(BUILD_DIR)/%.o: %.c | $(BUILD_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Regra para gerar o executável
+$(TARGET): $(OBJECTS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJECTS)
 	
-
+# Regra para limpar os arquivos gerados
 clean:
-	rm -f *.o $(DEFAULT_TARGET)
+	rm -rf $(BUILD_DIR)
 
-run:	$(DEFAULT_TARGET)
-	./$(DEFAULT_TARGET)
+# Regra para executar o programa
+run: $(TARGET)
+	./$(TARGET)
+
