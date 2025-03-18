@@ -60,12 +60,12 @@ int main(){
         printf("Element  previous to key 201 -> Key: %d, Dados: %s\n", previous->key, previous->data);
     }
 
-    printf("\n>>> Clear Test <<<\n");
+    printf("\n>>> Clear Test <<<\nList before clear");
 
     MyDLLPrint(&DLL);
     
     MyDLLClear(&DLL);
-
+    printf("List after clear:\n");
     MyDLLPrint(&DLL);
 
     return 0;
