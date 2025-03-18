@@ -28,10 +28,13 @@ list elements.
 
 
 <b>Usage:</b><br>
-
+To use this module run the make on the main folder and then run the main executable inside the bin foulder.
 
 <b>Test scenarios covered:</b><br>
-
-
+<ul>
+    <li>Adding and Removing elements, removing when the list is empty, adding an object with repeated key.</li>
+    <li>Searching for elements on the list, searching unexistent keys, finding previous/next in case of first/last element.</li>
+    <li>Printing and clearing the list</li>
+</ul>
 
 */
