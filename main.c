@@ -56,5 +56,9 @@ int main(){
     MyDLLInsert(634, nomes[7], &DLL);
     MyDLLPrint(&DLL);
 
+    MyDLLClear(&DLL);
+
+    MyDLLPrint(&DLL);
+
     return 0;
 }

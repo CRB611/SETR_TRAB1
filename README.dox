@@ -16,6 +16,7 @@ list elements.
     <li><i>Insertion:</i> Inserting a new element to the DLL. </li>
     <li><i>Removal:</i> Removing an element of the DLL acording to a given key. </li>
     <li><i>Searching:</i> Searching for an element of the DLL acording to a given key. </li>
+    <li><i>Cleaning:</i> Cleaning the list.
 </ul>
 
 <b>File Structure:</b><br>

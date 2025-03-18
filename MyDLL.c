@@ -162,3 +162,14 @@ void MyDLLPrint(MyDLL* dll){
         printf("DLL end-----\n\n");
     }
 }
+
+
+void MyDLLClear(MyDLL* dll){
+    dll->size=0;
+    dll->Tail=NULL;
+    dll->Head=NULL;
+    for (int i = 0; i < MAX_LIST_SIZE; i++)
+    {
+        dll->Elements[i].key = 0;
+    }  
+}
