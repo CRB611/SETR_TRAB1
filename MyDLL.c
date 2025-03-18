@@ -122,10 +122,12 @@ Element* MyDLLFind(uint16_t key, MyDLL *dll){
 
 Element*MyDLLFindNext(MyDLL* dll, uint16_t key){
 Element* curr = MyDLLFind(key,dll);
-    if (curr == NULL || curr->Next == NULL )
+    if (curr == NULL )
     {
-        printf("Error: Elemnt with key %d not valide or is the last element in the list\n",key);
+        printf("Error: Element with key %d not valid \n",key);
         return NULL;
+    }else if(curr->Next == NULL){
+        printf("Error: Element with key %d is the last one \n",key);
     }
 
     
@@ -135,10 +137,12 @@ Element* curr = MyDLLFind(key,dll);
 
 Element* MyDLLFindPrevious(MyDLL* dll, uint16_t key){
 Element* curr = MyDLLFind(key,dll);
-    if (curr == NULL || curr->Previous == NULL)
+    if (curr == NULL)
     {
-        printf("Error: Element with key %d not valide or is the first element in the list\n",key);
+        printf("Error: Element with key %d not valide \n",key);
         return NULL ; 
+    }else if(curr->Next == NULL){
+        printf("Error: Element with key %d is the first one \n",key);
     }
 
     return curr->Previous;    
