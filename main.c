@@ -25,37 +25,40 @@ int main(){
     printf("\n>>> Removal of elements <<<\n");
     
     MyDLLRemove(567,&DLL);
-    MyDLLRemove(789,&DLL);
+    MyDLLRemove(123,&DLL);
 
     MyDLLPrint(&DLL);
 
-    printf("\n>>> Teste de busca <<<\n");
+    printf("\n>>> Search Test <<<\n");
     Element* encontrado = MyDLLFind(305, &DLL);
     if (encontrado) {
-        printf("Elemento encontrado -> Chave: %d, Dados: %s\n", encontrado->key, encontrado->data);
+        printf("Found Element -> Key: %d, Data: %s\n", encontrado->key, encontrado->data);
     } 
     encontrado=MyDLLFind(304,&DLL);
     if (encontrado) {
-        printf("Elemento encontrado -> Chave: %d, Dados: %s\n", encontrado->key, encontrado->data);
+       printf("Found Element -> Key: %d, Data: %s\n", encontrado->key, encontrado->data);
     } 
-    
     
     printf("\n>>> Teste de busca do próximo e anterior <<<\n");
     Element* next = MyDLLFindNext(&DLL, 410);
     if (next) {
-        printf("Próximo elemento após chave 410 -> Chave: %d, Dados: %s\n", next->key, next->data);
+        printf("Element next to key 410 -> Key: %d, Data: %s\n", next->key, next->data);
     } 
 
     Element* previous = MyDLLFindPrevious(&DLL, 789);
     if (previous) {
-        printf("Elemento anterior à chave 789 -> Chave: %d, Dados: %s\n", previous->key, previous->data);
+        printf("Element previous to key 789 -> Key: %d, Dados: %s\n", previous->key, previous->data);
     }
 
-    printf("\n>>> Inserção adicional e estado final da lista <<<\n");
+    printf("\n>>>  Adding more elements <<<\n");
     MyDLLInsert(512, nomes[6], &DLL);
     MyDLLInsert(634, nomes[7], &DLL);
+    MyDLLInsert(658, nomes[5], &DLL);
+    
     MyDLLPrint(&DLL);
 
+    printf("\n>>> Clear Test <<<\n");
+    
     MyDLLClear(&DLL);
 
     MyDLLPrint(&DLL);
