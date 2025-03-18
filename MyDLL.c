@@ -68,6 +68,7 @@ int MyDLLRemove(uint16_t key, MyDLL* dll){
     for (int i = 1; curr !=NULL; i++){
         
         if (curr->key==key){
+            curr->key=0;
             for (int i = 0; i < MAX_ELEM_SIZE; i++){
                 tempdata[i]=curr->data[i];
                 }
@@ -96,7 +97,7 @@ int MyDLLRemove(uint16_t key, MyDLL* dll){
     if(dll->Head == curr){
         dll->Head=curr->Next;
     }
-    
+    dll->size--;
     printf("The element \"%s\" with the key %d was deleted\n",tempdata,key);
     return 1;
 }
@@ -141,7 +142,7 @@ Element* curr = MyDLLFind(key,dll);
     {
         printf("Error: Element with key %d not valide \n",key);
         return NULL ; 
-    }else if(curr->Next == NULL){
+    }else if(curr->Previous == NULL){
         printf("Error: Element with key %d is the first one \n",key);
     }
 

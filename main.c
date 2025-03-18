@@ -39,25 +39,30 @@ int main(){
        printf("Found Element -> Key: %d, Data: %s\n", encontrado->key, encontrado->data);
     } 
     
-    printf("\n>>> Teste de busca do próximo e anterior <<<\n");
+    printf("\n>>>  Next and previous search text <<<\n");
+    printf("Next\n");
     Element* next = MyDLLFindNext(&DLL, 410);
     if (next) {
         printf("Element next to key 410 -> Key: %d, Data: %s\n", next->key, next->data);
     } 
+    next=MyDLLFindNext(&DLL, 201);
+    if (next) {
+        printf("Element next to key 201 -> Key: %d, Data: %s\n", next->key, next->data);
+    } 
 
+    printf("Previous\n");
     Element* previous = MyDLLFindPrevious(&DLL, 789);
     if (previous) {
-        printf("Element previous to key 789 -> Key: %d, Dados: %s\n", previous->key, previous->data);
+        printf("Element  previous to key 789 -> Key: %d, Dados: %s\n", previous->key, previous->data);
+    }
+    previous = MyDLLFindPrevious(&DLL, 201);
+    if (previous) {
+        printf("Element  previous to key 201 -> Key: %d, Dados: %s\n", previous->key, previous->data);
     }
 
-    printf("\n>>>  Adding more elements <<<\n");
-    MyDLLInsert(512, nomes[6], &DLL);
-    MyDLLInsert(634, nomes[7], &DLL);
-    MyDLLInsert(658, nomes[5], &DLL);
-    
-    MyDLLPrint(&DLL);
-
     printf("\n>>> Clear Test <<<\n");
+
+    MyDLLPrint(&DLL);
     
     MyDLLClear(&DLL);
 
