@@ -50,7 +50,7 @@ typedef struct MyDLL {
 void MyDLLInit(MyDLL* dll);
 
 /**
- * \brief Adds an element to the DLL
+ * \brief Adds an element to the end of the DLL
  * \param key key of the element to be added
  * \param data data of the element to be added
  * \param dll list where the element will be added

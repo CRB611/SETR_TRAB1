@@ -44,15 +44,11 @@ int main(){
     Element* next = MyDLLFindNext(&DLL, 410);
     if (next) {
         printf("Próximo elemento após chave 410 -> Chave: %d, Dados: %s\n", next->key, next->data);
-    } else {
-        printf("Não há próximo elemento após a chave 410.\n");
-    }
+    } 
 
     Element* previous = MyDLLFindPrevious(&DLL, 789);
     if (previous) {
         printf("Elemento anterior à chave 789 -> Chave: %d, Dados: %s\n", previous->key, previous->data);
-    } else {
-        printf("Não há elemento anterior à chave 789.\n");
     }
 
     printf("\n>>> Inserção adicional e estado final da lista <<<\n");
